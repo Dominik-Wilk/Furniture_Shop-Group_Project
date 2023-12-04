@@ -9,7 +9,6 @@ import CompareProducts from '../../views/CompareProducts/CompareProducts';
 
 import { connect } from 'react-redux';
 import { getLayout } from '../../../redux/layoutRedux';
-import Heading from '../../common/Heading/Heading';
 
 class NewFurniture extends React.Component {
   state = {
@@ -29,7 +28,7 @@ class NewFurniture extends React.Component {
           activePage: newPage,
           isFading: false, // Set isFading to false to trigger fade-in
         });
-      },  this.state.fadeTiming); // Adjust the delay according to your transition duration
+      }, this.state.fadeTiming); // Adjust the delay according to your transition duration
     });
   }
 
@@ -122,7 +121,7 @@ class NewFurniture extends React.Component {
                 )
                 .map(item => (
                   <div key={item.id} className='col-12 col-md-4'>
-                    <ProductBox category={item.category}{...item} />
+                    <ProductBox category={item.category} {...item} />
                   </div>
                 ))}
             </div>
@@ -131,8 +130,7 @@ class NewFurniture extends React.Component {
             className={`row swipeableContent ${styles.productsContainer} ${
               isFading ? styles.fadeOut : styles.fadeIn
             }`}
-          >
-          </div>
+          ></div>
           <div className={styles.compare}>
             <CompareProducts />
           </div>

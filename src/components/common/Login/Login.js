@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import styles from './login.module.scss';
 import PropTypes from 'prop-types';
-import ProductBox from '../ProductBox/ProductBox';
 
 const Login = ({ loginOpen, setIsOpenLogin }) => {
   const [email, setEmail] = useState('');

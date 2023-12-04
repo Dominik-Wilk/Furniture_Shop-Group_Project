@@ -18,7 +18,7 @@ const FeatureBox = ({ icon, children }) => {
         </div>
       )}
       <div className={styles.content}>
-        <a href='#' className={styles.content} onClick={handleClick}>
+        <a href='/' className={styles.content} onClick={handleClick}>
           {' '}
           {children}
         </a>

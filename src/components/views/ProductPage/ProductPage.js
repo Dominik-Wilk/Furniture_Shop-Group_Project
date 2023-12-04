@@ -38,7 +38,6 @@ import {
 const ProductPage = () => {
   const { productId } = useParams();
   const product = useSelector(state => getProductById(state, productId));
-
   return (
     <div className={styles.root}>
       <Banner />
@@ -84,7 +83,7 @@ const ProductPage = () => {
             </div>
             <div className={styles.stars}>
               {[1, 2, 3, 4, 5].map(i => (
-                <a key={i} href='#'>
+                <a key={i} href='/'>
                   {i <= 2 ? (
                     <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
                   ) : (

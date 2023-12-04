@@ -6,11 +6,10 @@ import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-ico
 import styles from './ProductSearch.module.scss';
 import { getAll } from '../../../redux/categoriesRedux';
 import { useSelector } from 'react-redux';
-import { useState } from 'react';
 
 const ProductSearch = () => {
   const allCategories = useSelector(getAll);
-  const [isListVisible, setListVisibility] = useState(false);
+  const isListVisible = false;
 
   return (
     <form action='' className={styles.root}>

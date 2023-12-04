@@ -27,11 +27,8 @@ const ProductBox = ({
   oldPrice,
   category,
 }) => {
-
   const categoryInfo = initialState.categories.find(cat => cat.id === category);
-
   const imagePath = `/images/${categoryInfo.folder}/${name}.jpg`;
-
   const [isFav, setIsFav] = useState(false);
   const buttonFavoriteActive = clsx('outline', {
     [styles.favorite]: isFavorite,

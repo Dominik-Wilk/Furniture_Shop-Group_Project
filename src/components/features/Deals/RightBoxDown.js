@@ -4,7 +4,6 @@ import styles from './RightBoxDown.module.scss';
 
 const RightBoxDown = ({ title, description, imgSrc, subtitle }) => {
   const boldTitle = title.slice(0, 7);
-
   return (
     <div className={styles.rightBox}>
       <img className={styles.rightBackground} src={imgSrc} alt={title} />

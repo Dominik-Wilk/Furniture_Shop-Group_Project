@@ -19,7 +19,7 @@ const SectionBlog = () => {
             <div className={'col-auto ' + styles.dots}>
               <ul>
                 <li>
-                  <a className={styles.active}>page </a>
+                  <a className={styles.active}>page</a>
                 </li>
                 <li>
                   <a>page</a>
