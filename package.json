@@ -17,7 +17,8 @@
     "test": "react-scripts test --noStackTrace",
     "test-all": "react-scripts test --watchAll=false --noStackTrace",
     "test-related": "react-scripts test --watchAll=false --noStackTrace --findRelatedTests",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "serve": "static-server build"
   },
   "husky": {
     "hooks": {
@@ -78,6 +79,6 @@
     "prettier": "^1.19.1",
     "react-router-dom": "6.19.0",
     "redux-devtools-extension": "2.13.8",
-    "uniqid": "^5.4.0"
+    "uniqid": "5.4.0"
   }
 }
