@@ -13,7 +13,7 @@ const SectionBlog = () => {
       <div className='container'>
         <div className={styles.panelBar}>
           <div className='row no-gutters align-items-end'>
-            <div className={'col-auto ' + styles.heading}>
+            <div className={styles.heading}>
               <h3>Latest Blog</h3>
             </div>
             <div className={'col-auto ' + styles.dots}>
