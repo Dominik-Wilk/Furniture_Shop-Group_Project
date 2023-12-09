@@ -81,15 +81,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-
   }
 
   .favorite {
-       background-color: $primary;
-    color: #ffffff
-    }
+    background-color: $primary;
+    color: #ffffff;
+  }
   &:hover .priceBtn {
     background-color: $primary;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .root {
+    .photo {
+      .buttons {
+        opacity: 1;
+      }
+    }
   }
 }

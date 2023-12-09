@@ -38,6 +38,7 @@ const ProductBox = ({
     [styles.favorite]: isCompare,
   });
   const [isHovered, setIsHovered] = useState(false);
+  const isDesktop = window.innerWidth > 768;
 
   const [modalShow, setModalShow] = useState(false);
   const [backgroundBlur, setBackgroundBlur] = useState(false);
@@ -81,12 +82,11 @@ const ProductBox = ({
       name,
       price,
       qty: 1,
-      img: `images/${category}/${name}.jpg`,
+      img: imagePath,
     };
 
     dispatch(addProductToCart(cartProductData));
   };
-
   return (
     <div
       className={styles.root}
@@ -114,16 +114,35 @@ const ProductBox = ({
         <div className={styles.photo}>
           <img src={imagePath} alt={name} className='img-fluid' />
           {promo && <div className={styles.sale}>{promo}</div>}
-          <div
-            className={styles.buttons}
-            style={isHovered === true ? { opacity: 1 } : { opacity: 0 }}
-          >
-            <Button variant='small' onClick={modalOn}>
-              Quick View
-            </Button>
-            <Button variant='small' onClick={e => addToCart(e, name, price)}>
-              <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
-            </Button>
+          <div>
+            {isDesktop && (
+              <div
+                className={styles.buttons}
+                style={isHovered === true ? { opacity: 1 } : { opacity: 0 }}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
+                <Button variant='small' onClick={modalOn}>
+                  Quick View
+                </Button>
+                <Button variant='small' onClick={e => addToCart(e, name, price)}>
+                  <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO
+                  CART
+                </Button>
+              </div>
+            )}
+
+            {isDesktop || (
+              <div className={styles.buttons} style={{ opacity: 1 }}>
+                <Button variant='small' onClick={modalOn}>
+                  Quick View
+                </Button>
+                <Button variant='small' onClick={e => addToCart(e, name, price)}>
+                  <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO
+                  CART
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       </NavLink>
