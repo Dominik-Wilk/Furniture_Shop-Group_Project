@@ -20,15 +20,14 @@ class NewFurniture extends React.Component {
 
   handlePageChange(newPage, isSwipe) {
     if (isSwipe) return this.setState({ activePage: newPage });
-    // Set isFading to true before changing the page to trigger fade-out
+
     this.setState({ isFading: true }, () => {
       setTimeout(() => {
-        // Change the page after a delay to allow fade-out transition
         this.setState({
           activePage: newPage,
-          isFading: false, // Set isFading to false to trigger fade-in
+          isFading: false,
         });
-      }, this.state.fadeTiming); // Adjust the delay according to your transition duration
+      }, this.state.fadeTiming);
     });
   }
 
