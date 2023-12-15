@@ -3,6 +3,8 @@
 
 # WDP Projekt Zespołowy
 
+## Live Demo: [Furniture Shop](https://shopgroupproject.dominik-wilk.repl.co)
+
 ## Inicjacja projektu
 
 Po sklonowaniu projektu, zainstaluj wymagane paczki komendą `yarn install` (lub `npm install`).
