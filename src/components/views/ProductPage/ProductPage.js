@@ -15,8 +15,6 @@ import {
   faStar as farStar,
 } from '@fortawesome/free-regular-svg-icons';
 import {
-  faAngleLeft,
-  faAngleRight,
   faChevronLeft,
   faChevronRight,
   faExchangeAlt,
@@ -33,7 +31,9 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 
-// import PropTypes from 'prop-types';
+const stopDefault = e => {
+  e.preventDefault();
+};
 
 const ProductPage = () => {
   const { productId } = useParams();
@@ -43,7 +43,7 @@ const ProductPage = () => {
       <Banner />
       <div className='container'>
         <div className='row'>
-          <div className='col-5'>
+          <div className='col-12 col-md-5 mb-5'>
             <div className={styles.photo}>
               <img src={`/images/beds/${product.name}.jpg`} alt={product.name} />
             </div>
@@ -65,20 +65,12 @@ const ProductPage = () => {
               </div>
             </div>
           </div>
-          <div className='col-7'>
+          <div className='col-12 col-md-7 '>
             <div className='d-flex justify-content-between'>
               <div>
                 <p>
                   <b>{product.name}</b>
                 </p>
-              </div>
-              <div className={styles.buttons}>
-                <Button variant='small'>
-                  <FontAwesomeIcon icon={faAngleLeft} />
-                </Button>
-                <Button variant='small'>
-                  <FontAwesomeIcon icon={faAngleRight} />
-                </Button>
               </div>
             </div>
             <div className={styles.stars}>
@@ -102,27 +94,31 @@ const ProductPage = () => {
             </div>
             <div className={styles.line} />
             <div className={styles.actionBtns}>
-              <Button variant='outline' className={'cart'}>
+              <Button variant='outline' className={'cart'} onClick={stopDefault}>
                 <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
               </Button>
-              <Button variant='outline'>
+              <Button variant='outline' onClick={stopDefault}>
                 <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
               </Button>
-              <Button variant='outline'>
+              <Button variant='outline' onClick={stopDefault}>
                 <FontAwesomeIcon icon={faExchangeAlt}></FontAwesomeIcon>
               </Button>
-              <Button variant='outline'>
+              <Button variant='outline' onClick={stopDefault}>
                 <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
               </Button>
               <div className={styles.amount}>
                 <p className={styles.amountTxt}>Quantity:</p>
-                <Button variant='outline' className={styles.amountInput}>
-                  2
+                <Button
+                  variant='outline'
+                  className={styles.amountInput}
+                  onClick={stopDefault}
+                >
+                  1
                 </Button>
-                <Button variant='outline'>
+                <Button variant='outline' onClick={stopDefault}>
                   <FontAwesomeIcon icon={faMinus}></FontAwesomeIcon>
                 </Button>
-                <Button variant='outline'>
+                <Button variant='outline' onClick={stopDefault}>
                   <FontAwesomeIcon icon={faPlus}>Add to compare</FontAwesomeIcon>
                 </Button>
               </div>
@@ -149,20 +145,20 @@ const ProductPage = () => {
             </div>
             <div className={styles.line} />
             <div className={styles.socials}>
-              <Button variant='outline' className={'facebook'}>
+              <Button variant='outline' className={'facebook'} onClick={stopDefault}>
                 <FontAwesomeIcon fill={'blue'} icon={faFacebook}></FontAwesomeIcon>{' '}
                 Share
               </Button>
-              <Button variant='outline' className={'google'}>
+              <Button variant='outline' className={'google'} onClick={stopDefault}>
                 <FontAwesomeIcon icon={faGooglePlusG}></FontAwesomeIcon> Goolge+
               </Button>
-              <Button variant='outline' className={'twitter'}>
+              <Button variant='outline' className={'twitter'} onClick={stopDefault}>
                 <FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon> Tweet
               </Button>
-              <Button variant='outline' className={'pinterest'}>
+              <Button variant='outline' className={'pinterest'} onClick={stopDefault}>
                 <FontAwesomeIcon icon={faPinterestP}></FontAwesomeIcon> Pinterest
               </Button>
-              <Button variant='outline' className={'linkedin'}>
+              <Button variant='outline' className={'linkedin'} onClick={stopDefault}>
                 <FontAwesomeIcon icon={faLinkedinIn}></FontAwesomeIcon> Linkedin
               </Button>
             </div>
@@ -174,7 +170,5 @@ const ProductPage = () => {
     </div>
   );
 };
-
-// ProductPage.propTypes = {};
 
 export default ProductPage;

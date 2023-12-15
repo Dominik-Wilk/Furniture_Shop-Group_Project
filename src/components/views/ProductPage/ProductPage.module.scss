@@ -79,15 +79,7 @@
       border: 1px solid rgba(0, 0, 0, 0.5);
     }
   }
-  .buttons {
-    a {
-      background-color: $pure-white;
-      font-size: 16px;
-      color: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(0, 0, 0, 0.5);
-      margin: 0 2px;
-    }
-  }
+
   .price {
     margin: 20px 0;
     font-weight: bold;
@@ -185,6 +177,20 @@
     a:last-child:hover {
       background-color: #0077b5;
       border: none;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .root {
+    .socials {
+      display: flex;
+      justify-content: space-between;
+      a {
+        margin-right: 0;
+        text-align: center;
+        padding: 5px 5px;
+      }
     }
   }
 }

@@ -36,10 +36,15 @@ $text-color: rgba(
     li {
       padding: $base-spcing * 1.5 $base-spcing * 3;
       border: $border-width solid $border-color;
+      width: 25%;
       border-top: none;
       border-left: none;
       text-transform: uppercase;
       font-weight: 700;
+
+      &:last-of-type {
+        border-right: none;
+      }
 
       &.selected {
         border-bottom: none;
@@ -88,5 +93,17 @@ $text-color: rgba(
 
   .contents {
     padding: $base-spcing * 4;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    margin: $base-spcing 0;
+    ul {
+      li {
+        padding: $base-spcing * 1.5 $base-spcing;
+        font-size: 11px;
+      }
+    }
   }
 }

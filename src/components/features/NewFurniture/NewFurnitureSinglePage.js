@@ -7,7 +7,7 @@ import { getNew } from '../../../redux/productsRedux.js';
 
 const mapStateToProps = state => ({
   categories: getAll(state),
-  products: getNew(state).slice(0, 4),
+  products: getNew(state).slice(0, 6),
 });
 
 export default connect(mapStateToProps)(NewFurniture);
