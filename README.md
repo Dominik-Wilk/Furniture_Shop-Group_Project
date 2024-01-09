@@ -3,7 +3,7 @@
 
 # WDP Projekt Zespołowy
 
-## Live Demo: [Furniture Shop](https://shopgroupproject.dominik-wilk.repl.co)
+## Live Demo: [Furniture Shop](https://furniture-shop-group-project.vercel.app)
 
 ## Inicjacja projektu
 
